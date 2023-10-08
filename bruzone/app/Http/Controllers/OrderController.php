@@ -10,7 +10,7 @@ class OrderController extends Controller
     {
         $orders = DB::table('orders')->get();
 
-        $incompleteOrderCount = DB::table('orders')->where('incomplete', true)->count();
+        $incompleteOrderCount = DB::table('orders')->where('delivery_status', 'incomplete')->count();
 
         foreach ($orders as $order) {
             // Convert ordered_datetime to a DateTime object
