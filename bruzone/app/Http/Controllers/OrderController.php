@@ -8,7 +8,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        // Your code for handling the "order" page goes here
-        return view('order'); // This assumes you have a "order.blade.php" view file
+        $orders = Order::all();
+    return view('your.view.name', compact('orders'));
     }
 }
