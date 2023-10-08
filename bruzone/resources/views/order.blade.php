@@ -4,7 +4,7 @@
             {{ __('Order') }}
         </h2>
     </x-slot>
-
+    <div class="py-12">
     <div class="min-h-screen bg-gray-200">
         <main>
             <h1>Order List</h1>
@@ -38,6 +38,7 @@
                 </tbody>
             </table>
         </main>
+    </div>
     </div>
 </x-app-layout>
 
