@@ -10,6 +10,8 @@ class OrderController extends Controller
     {
         $orders = DB::table('orders')->get();
 
+        $incompleteOrderCount = DB::table('orders')->where('incomplete', true)->count();
+
         foreach ($orders as $order) {
             // Convert ordered_datetime to a DateTime object
             $order->ordered_datetime = new DateTime($order->ordered_datetime);
@@ -18,5 +20,7 @@ class OrderController extends Controller
         }
 
         return view('order', compact('orders'));
+
+        return view('layouts.navigation', ['incompleteOrderCount' => $incompleteOrderCount]);
     }
 }
