@@ -15,7 +15,11 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                  <span>{{ $incompleteOrderCount }}</span>
+                @if (isset($incompleteOrderCount))
+    <span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs ml-1">
+        {{ $incompleteOrderCount }}
+    </span>
+@endif
                 </div>
             </div>
 
