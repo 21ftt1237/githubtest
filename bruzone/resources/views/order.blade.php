@@ -11,6 +11,8 @@
             <table>
                 <thead>
                     <tr>
+                        <th>order ID</th>
+                        <th>User ID</th>
                         <th>Status</th>
                         <th>Name</th>
                         <th>Price</th>
