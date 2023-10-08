@@ -5,6 +5,7 @@
         </h2>
     </x-slot>
     <div class="py-12">
+        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
     <div class="min-h-screen bg-gray-200">
         <main>
             <h1>Order List</h1>
@@ -39,6 +40,7 @@
             </table>
         </main>
     </div>
+             </div>
     </div>
 </x-app-layout>
 
