@@ -9,6 +9,6 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
-    return view('order.blade.php', compact('orders'));
+    return view('order', compact('orders'));
     }
 }
