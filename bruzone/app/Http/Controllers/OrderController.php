@@ -1,14 +1,19 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB; // Import the DB facade
+use Illuminate\Support\Facades\DB;
+use DateTime; // Import DateTime class
 
 class OrderController extends Controller
 {
     public function index()
     {
-        // Use the DB facade to fetch data from the "orders" table
         $orders = DB::table('orders')->get();
+
+        foreach ($orders as $order) {
+            // Convert ordered_datetime to a DateTime object
+            $order->ordered_datetime = new DateTime($order->ordered_datetime);
+        }
 
         return view('order', compact('orders'));
     }
