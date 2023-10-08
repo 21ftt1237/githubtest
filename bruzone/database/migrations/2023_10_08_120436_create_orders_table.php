@@ -12,7 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id();
+           $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('name');
+            $table->decimal('price', 10, 2);
+            $table->dateTime('ordered_datetime');
+            $table->string('delivery_location');
+            $table->dateTime('delivery_time');
+            $table->dateTime('delivered_time')->nullable();
+            $table->enum('delivery_status', ['complete', 'incomplete']);
             $table->timestamps();
         });
     }
