@@ -21,6 +21,6 @@ class OrderController extends Controller
 
         return view('order', compact('orders'));
 
-        return view('your.view.name', ['incompleteOrderCount' => $incompleteOrderCount]);
+        return view('layouts.navigation', ['incompleteOrderCount' => $incompleteOrderCount]);
     }
 }
