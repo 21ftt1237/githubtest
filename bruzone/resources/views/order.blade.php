@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <div class="py-12">
-        <div class="bg-blue-200 dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="bg-white-200 dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
     <div class="min-h-screen bg-gray-200">
         <main>
             <h1>Order List</h1>
