@@ -81,8 +81,6 @@
             right: 0;
             font-size: 14px;
         }
-       .py-12{
-           background-color: white;
-       }
+      
        
     </style>
