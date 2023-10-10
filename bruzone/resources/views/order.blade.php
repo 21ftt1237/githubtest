@@ -28,7 +28,7 @@
                        
                         <td>{{ $order->id }}</td>
                         <td>{{ $order->user_id }}</td>
-                        <td>{{ $order->status }}</td>
+                        <td>{{ $order->delivery_status }}</td>
                         <td>{{ $order->name }}</td>
                         <td>${{ number_format($order->price, 2) }}</td>
                         <td>{{ $order->ordered_datetime->format('Y-m-d h:i A') }}</td>
