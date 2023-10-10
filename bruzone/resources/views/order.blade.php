@@ -81,9 +81,7 @@
             right: 0;
             font-size: 14px;
         }
-       main{
-           background-color:white;
-       }
+       
       
        
     </style>
