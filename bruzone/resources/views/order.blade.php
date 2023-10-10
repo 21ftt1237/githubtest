@@ -1,11 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-green-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl text-green-gray dark:text-gray-200 leading-tight">
             {{ __('Order') }}
         </h2>
     </x-slot>
     <div class="py-12">
-        <div class="bg-blue dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="bg-blue dark:bg-green-800 overflow-hidden shadow-sm sm:rounded-lg">
     <div class="min-h-screen bg-gray-200">
         <main>
             <h1>Order List</h1>
