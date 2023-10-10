@@ -16,7 +16,7 @@
                         <th>User ID</th>
                         <th>Status</th>
                         <th>Name</th>
-                        <th>Price</th>
+                        <th>Total Price</th>
                         <th>Order Date & Time</th>
                         <th>Delivery Time</th>
                         <th>Delivery Location</th>
