@@ -16,7 +16,7 @@
                         <th>User ID</th>
                         <th>Status</th>
                         <th>Name</th>
-                        <th>Price</th>
+                        <th>Total Price</th>
                         <th>Order Date & Time</th>
                         <th>Delivery Time</th>
                         <th>Delivery Location</th>
@@ -81,5 +81,8 @@
             right: 0;
             font-size: 14px;
         }
+       .py-12{
+           background-color: white;
+       }
        
     </style>
