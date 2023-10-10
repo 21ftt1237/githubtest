@@ -51,7 +51,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            background-color: blue;
+            background-color: white;
         }
         th, td {
             border: 1px solid #ccc;
