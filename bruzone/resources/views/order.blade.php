@@ -33,7 +33,7 @@
                                 <td>{{ $order->delivery_time != null ? $order->delivery_time->format('h:i A') : 'Not scheduled' }}</td>
                                 <td>{{ $order->delivery_location }}</td>
                                 <td class="track-order-link">
-                                    <form method="post" action="{{ route('track_order') }}">
+                                    <form method="post" action="{{ route('order_status') }}">
                                         @csrf
                                         <input type="hidden" name="order_id" value="{{ $order->id }}">
                                         <button type="submit">
