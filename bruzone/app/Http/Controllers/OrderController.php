@@ -24,7 +24,7 @@ class OrderController extends Controller
             }
         }
 
-        return view('order.index', compact('orders', 'incompleteOrderCount'));
+        return view('order', compact('orders', 'incompleteOrderCount'));
     }
 
    public function track(Request $request)
