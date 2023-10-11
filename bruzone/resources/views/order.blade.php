@@ -19,6 +19,7 @@
                         <th>Order Date & Time</th>
                         <th>Delivery Time</th>
                         <th>Delivery Location</th>
+                        <th> </th>
                     </tr>
                 </thead>
                 <tbody>
