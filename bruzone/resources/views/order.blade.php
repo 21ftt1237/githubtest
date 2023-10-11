@@ -33,7 +33,7 @@
                         <td>{{ $order->ordered_datetime->format('Y-m-d h:i A') }}</td>
                         <td>{{ $order->delivery_time != null ? $order->delivery_time->format('h:i A') : 'Not scheduled' }}</td>
                         <td>{{ $order->delivery_location }}</td>
-                        <td><x-nav-link :href="route('order_status')" :active="request()->routeIs('order_status')">
+                        <td class="track-order-link"><x-nav-link :href="route('order_status')" :active="request()->routeIs('order_status')">
                             {{ __('Track Order') }}
                             </x-nav-link>
                         </td>
@@ -84,6 +84,13 @@
             right: 0;
             font-size: 14px;
         }
+
+       @media screen and (max-width: 768px) {
+    /* Define styles for mobile screens */
+    .track-order-link {
+        display: block; /* or any other suitable style */
+    }
+}
        
       
        
