@@ -31,8 +31,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/order', [OrderController::class, 'index'])->name('order');
 
-Route::get('/order-status', function () {
-    return view('order-status');
+Route::get('/order_status', function () {
+    return view('order_status');
 });
 
 require __DIR__.'/auth.php';
