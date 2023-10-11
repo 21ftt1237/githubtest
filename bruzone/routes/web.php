@@ -33,6 +33,6 @@ Route::get('/order', [OrderController::class, 'index'])->name('order');
 
 Route::get('/order_status', function () {
     return view('order_status');
-});
+})->name('order_status');
 
 require __DIR__.'/auth.php';
