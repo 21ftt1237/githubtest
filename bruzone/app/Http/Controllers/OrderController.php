@@ -31,7 +31,7 @@ class OrderController extends Controller
 {
     $order_id = $request->input('order_id');
     
-    $order = Order::find($order_id);
+   
     
     return view('order_status', compact('order'));
 }
