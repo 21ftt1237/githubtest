@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Laravel Page</title>
-</head>
+<x-app-layout></x-app-layout>
 <body>
     <h1>Welcome to my page!</h1>
 </body>
-</html>
+</x-app-layout>
