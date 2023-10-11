@@ -13,7 +13,6 @@
                 <thead>
                     <tr>
                         <th>order ID</th>
-                        <th>User ID</th>
                         <th>Status</th>
                         <th>Name</th>
                         <th>Total Price</th>
@@ -27,7 +26,6 @@
                     <tr>
                        
                         <td>{{ $order->id }}</td>
-                        <td>{{ $order->user_id }}</td>
                         <td>{{ $order->delivery_status }}</td>
                         <td>{{ $order->name }}</td>
                         <td>${{ number_format($order->price, 2) }}</td>
