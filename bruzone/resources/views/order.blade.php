@@ -33,9 +33,14 @@
                         <td>{{ $order->ordered_datetime->format('Y-m-d h:i A') }}</td>
                         <td>{{ $order->delivery_time != null ? $order->delivery_time->format('h:i A') : 'Not scheduled' }}</td>
                         <td>{{ $order->delivery_location }}</td>
-                        <td class="track-order-link"><x-nav-link :href="route('order_status')" :active="request()->routeIs('order_status')">
-                            {{ __('Track Order') }}
-                            </x-nav-link>
+                        <td class="track-order-link"><form method="post" action="{{ route('track_order') }}">
+                        @csrf
+                        <input type="hidden" name="order_id" value="{{ $order->id }}">
+                        <button type="submit" class="track-order-link">
+                        {{ __('Track Order') }}
+                        </button>
+                        </form>
+                        </x-nav-link>
                         </td>
                     </tr>
                     @endforeach
