@@ -89,7 +89,9 @@
             right: 0;
             font-size: 14px;
         }
-
+       .button {
+       text-color:blue;
+       }
        @media screen and (max-width: 768px) {
     /* Define styles for mobile screens */
     .track-order-link {
