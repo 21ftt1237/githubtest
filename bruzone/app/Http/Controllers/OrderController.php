@@ -11,7 +11,7 @@ class OrderController extends Controller
 {
     public function index(Request $request)
     {
-        $orders = DB::table('orders')->get();
+        $order = DB::table('orders')->get();
         $incompleteOrderCount = DB::table('orders')->where('delivery_status', 'incomplete')->count();
 
         foreach ($orders as $order) {
@@ -31,7 +31,7 @@ class OrderController extends Controller
 {
     $order_id = $request->input('order_id');
     
-    $order = Order::find($order_id);
+
     
     return view('order_status', compact('order'));
 }
