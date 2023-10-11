@@ -34,8 +34,8 @@
                         <td>{{ $order->ordered_datetime->format('Y-m-d h:i A') }}</td>
                         <td>{{ $order->delivery_time != null ? $order->delivery_time->format('h:i A') : 'Not scheduled' }}</td>
                         <td>{{ $order->delivery_location }}</td>
-                        <td><x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __('Dashboard') }}
+                        <td><x-nav-link :href="route('order-status')" :active="request()->routeIs('order-status')">
+                            {{ __('Track Order') }}
                             </x-nav-link>
                         </td>
                     </tr>
