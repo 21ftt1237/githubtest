@@ -27,12 +27,18 @@ class OrderController extends Controller
         return view('order', compact('orders', 'incompleteOrderCount'));
     }
 
-   public function track(Request $request)
+  public function track(Request $request)
 {
     $order_id = $request->input('order_id');
     
+    // Retrieve the order data based on $order_id
+    $order = Order::find($order_id);
 
-    
-    return view('order_status', compact('order'));
+    // Check if the order exists
+    if ($order) {
+        return view('order_status', compact('order'));
+    } else {
+        // Handle the case where the order doesn't exist, e.g., redirect or display an error message.
+    }
 }
 }
