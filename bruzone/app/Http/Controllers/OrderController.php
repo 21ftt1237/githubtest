@@ -24,15 +24,15 @@ class OrderController extends Controller
             }
         }
 
-        return view('order', compact('orders', 'incompleteOrderCount'));
+        return view('order.index', compact('orders', 'incompleteOrderCount'));
     }
 
-    public function track(Request $request)
-    {
-        $order_id = $request->input('order_id');
-        
-        $order = Order::find($order_id);
-        
-        return view('order_status', compact('order'));
-    }
+   public function track(Request $request)
+{
+    $order_id = $request->input('order_id');
+    
+    $order = Order::find($order_id);
+    
+    return view('order_status', compact('order'));
+}
 }
