@@ -25,7 +25,7 @@ class OrderController extends Controller
         return view('order', compact('orders', 'incompleteOrderCount'));
     }
 
- public function track(Request $request)
+public function track(Request $request)
 {
     $order_id = $request->input('order_id');
 
@@ -39,13 +39,10 @@ class OrderController extends Controller
             $order->delivery_time = new DateTime($order->delivery_time);
         }
 
-        // Pass both $order and $orders to the view
-        $orders = DB::table('orders')->get(); // Fetch all orders
-        return view('order_status', compact('order', 'orders'));
+        return view('order_status', compact('order'));
     } else {
         // Handle the case where the order doesn't exist, e.g., redirect or display an error message.
     }
 }
-
 
 }
