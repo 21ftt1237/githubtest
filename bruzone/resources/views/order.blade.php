@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <div class="py-12">
-        <div class="bg-blue dark.bg-white overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="bg-blue dark:bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="min-h-screen bg-blue-200">
                 <main>
                     <h1>Order List</h1>
@@ -16,6 +16,7 @@
                                 <th>Order Date & Time</th>
                                 <th>Total Orders</th>
                                 <th>Total Price</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,6 +34,16 @@
                                             <td>{{ $previousDateTime->format('Y-m-d h:i A') }}</td>
                                             <td>{{ $totalOrders }}</td>
                                             <td>${{ number_format($totalPrice, 2) }}</td>
+                                            <td class="track-order-link">
+                                                <form method="post" action="{{ route('order_status') }}">
+                                                    @csrf
+                                                    <input type="hidden" name="user_id" value="{{ $previousUserId }}">
+                                                    <input type="hidden" name="order_date" value="{{ $previousDateTime }}">
+                                                    <button type="submit">
+                                                        {{ __('Track Order') }}
+                                                    </button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endif
                                     @php
@@ -54,6 +65,16 @@
                                     <td>{{ $previousDateTime->format('Y-m-d h:i A') }}</td>
                                     <td>{{ $totalOrders }}</td>
                                     <td>${{ number_format($totalPrice, 2) }}</td>
+                                    <td class="track-order-link">
+                                        <form method="post" action="{{ route('order_status') }}">
+                                            @csrf
+                                            <input type="hidden" name="user_id" value="{{ $previousUserId }}">
+                                            <input type="hidden" name="order_date" value="{{ $previousDateTime }}">
+                                            <button type="submit">
+                                                {{ __('Track Order') }}
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endif
                         </tbody>
