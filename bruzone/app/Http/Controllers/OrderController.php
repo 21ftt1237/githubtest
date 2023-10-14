@@ -1,4 +1,11 @@
-public function index(Request $request)
+<?php
+namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use DateTime;
+class OrderController extends Controller
+{
+   public function index(Request $request)
 {
     $orders = DB::table('orders')->get();
     $incompleteOrderCount = DB::table('orders')->where('delivery_status', 'incomplete')->count();
@@ -16,4 +23,3 @@ public function index(Request $request)
         'incompleteOrderCount' => $incompleteOrderCount,
     ]);
 }
-
