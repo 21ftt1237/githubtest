@@ -1,7 +1,25 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-green-gray dark:text-gray-200 leading-tight">
-            {{ __('Order Status:') }}
-        </h2>
-    </x-slot>
-</x-app-layout>
+
+    @extends('layouts.app')  <!-- You might need to adjust the layout as needed -->
+
+@section('content')
+    <h2>Order Status</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($items as $item)
+                <tr>
+                    <td>{{ $item->name }}</td>
+                    <td>{{ $item->quantity }}</td>
+                    <td>{{ $item->price }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+@endsection
+
