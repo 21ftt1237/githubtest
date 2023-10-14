@@ -33,8 +33,7 @@
                                             <td>{{ $previousUserId }}</td>
                                             <td>{{ $previousDateTime->format('Y-m-d h:i A') }}</td>
                                             <td>{{ $totalOrders }}</td>
-                                            <td>${{ number_format($totalPrice, 2) }}</td>
-                                            
+                                            <td>${{ number_format($totalPrice, 2) }}</td>         
                                         </tr>
                                     @endif
                                     @php
@@ -56,7 +55,8 @@
                                     <td>{{ $previousDateTime->format('Y-m-d h:i A') }}</td>
                                     <td>{{ $totalOrders }}</td>
                                     <td>${{ number_format($totalPrice, 2) }}</td>
-
+                                     <td>p</td>
+                                    
                                 </tr>
                             @endif
                         </tbody>
