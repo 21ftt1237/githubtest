@@ -39,7 +39,8 @@ public function track(Request $request)
             $order->delivery_time = new DateTime($order->delivery_time);
         }
 
-        return view('order_status', compact('order'));
+        return view('order_status', compact('order', 'orders'));
+
     } else {
         // Handle the case where the order doesn't exist, e.g., redirect or display an error message.
     }
