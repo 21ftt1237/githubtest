@@ -32,7 +32,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($order as $order)
+                            @foreach($orders as $order)
                             <tr>
                                 <td>{{ $order->id }}</td>
                                 <td>{{ $order->delivery_status }}</td>
