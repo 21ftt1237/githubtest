@@ -24,16 +24,9 @@ class OrderController extends Controller
 
         return view('order', compact('orders', 'incompleteOrderCount'));
     }
-class OrderController extends Controller
-{
-    // Other methods
 
     public function track(Request $request)
     {
         // Process the tracking request here
     }
-}
-
-
-
 }
