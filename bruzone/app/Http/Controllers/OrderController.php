@@ -25,8 +25,14 @@ class OrderController extends Controller
         return view('order', compact('orders', 'incompleteOrderCount'));
     }
 
-    public function track(Request $request)
-    {
-        // Process the tracking request here
-    }
+    public function showStatus($user_id, $order_date)
+{
+    // Fetch the list of items for the specified user ID and order date
+    $items = OrderItem::where('user_id', $user_id)
+        ->where('order_date', $order_date)
+        ->get();
+
+    // Return the view with the list of items
+    return view('order_status', ['items' => $items]);
+}
 }
