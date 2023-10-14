@@ -66,11 +66,22 @@
                                     <td>{{ $totalOrders }}</td>
                                     <td>${{ number_format($totalPrice, 2) }}</td>
                                     <td class="track-order-link">
+<<<<<<< HEAD
                                       <form method="get" action="{{ route('order_status', ['user_id' => $previousUserId, 'order_date' => $previousDateTime->format('Y-m-d H:i:s')]) }}">
     <button type="submit">
         {{ __('Track Order') }}
     </button>
 </form>
+=======
+                                        <form method="post" action="{{ route('order_status') }}">
+                                            @csrf
+                                            <input type="hidden" name="user_id" value="{{ $previousUserId }}">
+                                            <input type="hidden" name="order_date" value="{{ $previousDateTime->format('Y-m-d H:i:s') }}">
+                                            <button type="submit">
+                                                {{ __('Track Order') }}
+                                            </button>
+                                        </form>
+>>>>>>> parent of 2085228 (Update order.blade.php)
                                     </td>
                                 </tr>
                             @endif
