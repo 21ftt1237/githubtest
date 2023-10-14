@@ -66,7 +66,7 @@
                                     <td>{{ $totalOrders }}</td>
                                     <td>${{ number_format($totalPrice, 2) }}</td>
                                     <td class="track-order-link">
-                                       <form method="post" action="{{ route('order_status', ['user_id' => $previousUserId, 'order_date' => $previousDateTime->format('Y-m-d H:i:s')]) }}">
+                                       <form method="get" action="{{ route('order_status', ['user_id' => $previousUserId, 'order_date' => $previousDateTime->format('Y-m-d H:i:s')]) }}">
     <button type="submit">
         {{ __('Track Order') }}
     </button>
