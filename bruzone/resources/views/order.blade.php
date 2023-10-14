@@ -38,7 +38,7 @@
                                                 <form method="post" action="{{ route('order_status') }}">
                                                     @csrf
                                                     <input type="hidden" name="user_id" value="{{ $previousUserId }}">
-                                                    <input type="hidden" name="order_date" value="{{ $previousDateTime }}">
+                                                  <input type="hidden" name="order_date" value="{{ $previousDateTime->format('Y-m-d H:i:s') }}">
                                                     <button type="submit">
                                                         {{ __('Track Order') }}
                                                     </button>
