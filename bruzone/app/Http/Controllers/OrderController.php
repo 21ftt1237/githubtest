@@ -18,7 +18,7 @@ class OrderController extends Controller
         }
     }
     
-    return view('your-view-name', [
+    return view('order', [
         'orders' => $orders,
         'incompleteOrderCount' => $incompleteOrderCount,
     ]);
