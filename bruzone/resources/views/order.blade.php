@@ -12,37 +12,44 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Order ID</th>
-                                <th>Status</th>
-                                <th>Name</th>
-                                <th>Total Price</th>
+                                <th>User ID</th>
                                 <th>Order Date & Time</th>
-                                <th>Delivery Time</th>
-                                <th>Delivery Location</th>
-                                <th>Action</th>
+                                <th>Total Orders</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @php
+                                $previousUserId = null;
+                                $previousDateTime = null;
+                                $totalOrders = 0;
+                            @endphp
                             @foreach($orders as $order)
-                            <tr>
-                                <td>{{ $order->id }}</td>
-                                <td>{{ $order->delivery_status }}</td>
-                                <td>{{ $order->name }}</td>
-                                <td>${{ number_format($order->price, 2) }}</td>
-                                <td>{{ $order->ordered_datetime->format('Y-m-d h:i A') }}</td>
-                                <td>{{ $order->delivery_time != null ? $order->delivery_time->format('h:i A') : 'Not scheduled' }}</td>
-                                <td>{{ $order->delivery_location }}</td>
-                                <td class="track-order-link">
-                                   <form method="post" action="{{ route('order_status') }}">
-                                  @csrf
-                             <input type="hidden" name="order_id" value="{{ $order->id }}">
-                               <button type="submit">
-                              {{ __('Track Order') }}
-                                </button>
-                                </form>
-                                </td>
-                            </tr>
+                                @if ($order->user_id != $previousUserId || $order->ordered_datetime != $previousDateTime)
+                                    @if ($previousUserId !== null)
+                                        <tr>
+                                            <td>{{ $previousUserId }}</td>
+                                            <td>{{ $previousDateTime->format('Y-m-d h:i A') }}</td>
+                                            <td>{{ $totalOrders }}</td>
+                                        </tr>
+                                    @endif
+                                    @php
+                                        $previousUserId = $order->user_id;
+                                        $previousDateTime = $order->ordered_datetime;
+                                        $totalOrders = 1;
+                                    @endphp
+                                @else
+                                    @php
+                                        $totalOrders++;
+                                    @endphp
+                                @endif
                             @endforeach
+                            @if ($previousUserId !== null)
+                                <tr>
+                                    <td>{{ $previousUserId }}</td>
+                                    <td>{{ $previousDateTime->format('Y-m-d h:i A') }}</td>
+                                    <td>{{ $totalOrders }}</td>
+                                </tr>
+                            @endif
                         </tbody>
                     </table>
                 </main>
