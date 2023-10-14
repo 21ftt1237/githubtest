@@ -23,3 +23,4 @@ class OrderController extends Controller
         'incompleteOrderCount' => $incompleteOrderCount,
     ]);
 }
+}
