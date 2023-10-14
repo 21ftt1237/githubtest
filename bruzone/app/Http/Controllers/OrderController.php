@@ -25,25 +25,6 @@ class OrderController extends Controller
         return view('order', compact('orders', 'incompleteOrderCount'));
     }
 
-public function track(Request $request)
-{
-    $order_id = $request->input('order_id');
 
-    // Retrieve the order data directly from the database
-    $order = DB::table('orders')->where('id', $order_id)->first();
-
-    if ($order) {
-        // Convert date/time fields to DateTime objects if needed
-        $order->ordered_datetime = new DateTime($order->ordered_datetime);
-        if ($order->delivery_time != null) {
-            $order->delivery_time = new DateTime($order->delivery_time);
-        }
-
-        return view('order_status', compact('order', 'orders'));
-
-    } else {
-        // Handle the case where the order doesn't exist, e.g., redirect or display an error message.
-    }
-}
 
 }
