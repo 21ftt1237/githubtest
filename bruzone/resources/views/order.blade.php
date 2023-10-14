@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <div class="py-12">
-        <div class="bg-blue dark:bg-white overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="bg-blue dark.bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="min-h-screen bg-blue-200">
                 <main>
                     <h1>Order List</h1>
@@ -15,6 +15,7 @@
                                 <th>User ID</th>
                                 <th>Order Date & Time</th>
                                 <th>Total Orders</th>
+                                <th>Total Price</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -22,6 +23,7 @@
                                 $previousUserId = null;
                                 $previousDateTime = null;
                                 $totalOrders = 0;
+                                $totalPrice = 0;
                             @endphp
                             @foreach($orders as $order)
                                 @if ($order->user_id != $previousUserId || $order->ordered_datetime != $previousDateTime)
@@ -30,16 +32,19 @@
                                             <td>{{ $previousUserId }}</td>
                                             <td>{{ $previousDateTime->format('Y-m-d h:i A') }}</td>
                                             <td>{{ $totalOrders }}</td>
+                                            <td>${{ number_format($totalPrice, 2) }}</td>
                                         </tr>
                                     @endif
                                     @php
                                         $previousUserId = $order->user_id;
                                         $previousDateTime = $order->ordered_datetime;
                                         $totalOrders = 1;
+                                        $totalPrice = $order->price;
                                     @endphp
                                 @else
                                     @php
                                         $totalOrders++;
+                                        $totalPrice += $order->price;
                                     @endphp
                                 @endif
                             @endforeach
@@ -48,6 +53,7 @@
                                     <td>{{ $previousUserId }}</td>
                                     <td>{{ $previousDateTime->format('Y-m-d h:i A') }}</td>
                                     <td>{{ $totalOrders }}</td>
+                                    <td>${{ number_format($totalPrice, 2) }}</td>
                                 </tr>
                             @endif
                         </tbody>
@@ -57,6 +63,7 @@
         </div>
     </div>
 </x-app-layout>
+
 
 
    <style>
